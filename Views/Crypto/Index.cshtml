@@ -1,0 +1,22 @@
+@model CryptoQuotesApp.Models.CryptoQuoteViewModel
+
+<h2>Cryptocurrency Quotes</h2>
+
+<form method="post">
+    <label>Enter Crypto Code (e.g. BTC):</label>
+    <input type="text" name="cryptoCode" required />
+    <button type="submit">Get Quotes</button>
+</form>
+
+@if (Model != null && Model.USD > 0)
+{
+    <hr />
+    <h3>@Model.CryptoCode Prices</h3>
+    <ul>
+        <li>USD: @Model.USD</li>
+        <li>EUR: @Model.EUR</li>
+        <li>BRL: @Model.BRL</li>
+        <li>GBP: @Model.GBP</li>
+        <li>AUD: @Model.AUD</li>
+    </ul>
+}
